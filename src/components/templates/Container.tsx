@@ -1,12 +1,12 @@
-import React, {ReactElement} from 'react';
+import React, { ReactElement } from 'react';
 import styled from 'styled-components/native';
 import theme from '../../theme/light';
 
 export type VisibleElement = {
-  children: Element;
+  children: ReactElement;
 };
 
-export default ({children}: VisibleElement): ReactElement => (
+export default ({ children }: VisibleElement): ReactElement => (
   <Container>{children}</Container>
 );
 const Container = styled.SafeAreaView`
