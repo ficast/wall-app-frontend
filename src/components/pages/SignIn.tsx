@@ -1,14 +1,17 @@
-import React, { ReactElement } from 'react';
-import { Text } from 'react-native';
+import React, { ReactElement, useState } from 'react';
 import styled from 'styled-components/native';
 import Container from '../templates/Container';
+import LoginBox from '../organisms/LoginBox';
 import theme from '../../theme/nice';
 
 export default (): ReactElement => {
-  const [showLoginBox, setShowLoginBox] = 
+  const [showLoginBox, setShowLoginBox] = useState(false);
   return (
     <Container>
-      <Title onPress={setShowLoginBox(true)}>Sign In</Title>
+      <>
+        <Title onPress={() => setShowLoginBox(true)}>Sign In</Title>
+        {showLoginBox && <LoginBox />}
+      </>
     </Container>
   );
 };
